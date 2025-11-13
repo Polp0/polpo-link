@@ -23,7 +23,7 @@ body {
 .card {
     background: #E2182C;
     width: 100%;
-    max-width: 430px;
+    max-width: 420px;
     min-height: 100vh;
     overflow: hidden;
 }
@@ -85,7 +85,7 @@ h1 {
 .icons {
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 16px;
     margin-bottom: 32px;
 }
 
