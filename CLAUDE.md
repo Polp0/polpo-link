@@ -1,8 +1,17 @@
 # polpo-link
 
-Landing page personale stile Linktree per polpo (DJ/producer).
+Landing page personale stile Linktree per polpo.
 
-## Dev
+**Dominio**: https://polpo.tech/
+
+## Stack
+
+- HTML/CSS statico (no framework)
+- Hosting: Cloudflare Pages
+- Repo GitHub: github.com/Polp0/polpo-link
+- Deploy: automatico su push a main
+
+## Dev locale
 
 ```bash
 npx serve
@@ -10,20 +19,28 @@ npx serve
 
 Apri http://localhost:3000
 
+## Deploy
+
+```bash
+git add . && git commit -m "message" && git push
+```
+
+Cloudflare Pages fa deploy automatico dal branch main.
+
 ## Struttura
 
 ```
 index.html      - pagina principale
 styles.css      - stili
 img/
-  hero-img.jpg  - foto profilo
+  hero-img.jpg  - foto profilo (avatar)
   icons/        - icone SVG (instagram, soundcloud, telegram, youtube)
 ```
 
 ## Sezioni pagina
 
 1. **Profilo** - avatar piccolo (96px) + nome + icone social (Instagram, SoundCloud)
-2. **Tiles** - contenuti specifici (TEMPIO RADIO, Home Mixes)
+2. **Tiles** - contenuti specifici con thumbnail (TEMPIO RADIO, Home Mixes)
 3. **Collective kntk** - icone piccole (Instagram, SoundCloud, Telegram)
 
 **Nota**: I link generali (Instagram, SoundCloud) sono icone, NON tiles. Le tiles sono solo per contenuti specifici.
@@ -34,7 +51,4 @@ img/
 - Open Graph (Facebook, WhatsApp)
 - Twitter Cards
 - Schema.org JSON-LD (Person)
-
-## Deploy
-
-Hostato su Cloudflare Pages (vedi wrangler.toml)
+- Canonical URL: https://polpo.tech/
