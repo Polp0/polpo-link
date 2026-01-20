@@ -2,21 +2,58 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="HandheldFriendly" content="true">
+
+    <!-- SEO -->
     <title>polpo</title>
+    <meta name="description" content="polpo - Ascolta i miei set su SoundCloud, seguimi su Instagram. Membro del collettivo kntk.">
+    <meta name="keywords" content="polpo, musica elettronica, techno, kntk, kinetik">
+    <meta name="author" content="polpo">
+    <link rel="canonical" href="https://polpo.link/">
+
+    <!-- Open Graph (Facebook, WhatsApp, etc) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="polpo">
+    <meta property="og:description" content="Ascolta i miei set su SoundCloud e seguimi sui social.">
+    <meta property="og:url" content="https://polpo.link/">
+    <meta property="og:image" content="https://polpo.link/img/hero-img.jpg">
+    <meta property="og:site_name" content="polpo">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="polpo">
+    <meta name="twitter:description" content="Ascolta i miei set su SoundCloud e seguimi sui social.">
+    <meta name="twitter:image" content="https://polpo.link/img/hero-img.jpg">
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "polpo",
+        "alternateName": "Paolo Albasini",
+        "description": "Musica elettronica",
+        "url": "https://polpo.link/",
+        "image": "https://polpo.link/img/hero-img.jpg",
+        "sameAs": [
+            "https://instagram.com/_polpo",
+            "https://soundcloud.com/paolo-albasini"
+        ],
+        "memberOf": {
+            "@type": "MusicGroup",
+            "name": "kntk"
+        }
+    }
+    </script>
 </head>
 <body>
 
 <div class="card">
-    <div class="hero">
-        <img src="img/hero-img.jpg" alt="polpo dj" class="hero-img">
-        <div class="fade"></div>
-    </div>
-
-    <div class="content">
+    <div class="profile">
+        <img src="img/hero-img.jpg" alt="polpo" class="avatar" width="96" height="96" loading="eager">
         <h1>polpo</h1>
         <div class="icons">
             <a href="https://instagram.com/_polpo" aria-label="Instagram">
@@ -26,9 +63,41 @@
                 <img src="img/icons/soundcloud.svg" class="icon" alt="">
             </a>
         </div>
+    </div>
 
-        <h1>kntk</h1>
-        <div class="icons">
+    <div class="tiles">
+        <a href="https://youtu.be/a_aurD8FdiI" class="tile" target="_blank">
+            <img src="https://img.youtube.com/vi/a_aurD8FdiI/mqdefault.jpg" class="tile-thumb" alt="TEMPIO RADIO set polpo" width="72" height="72" loading="lazy" decoding="async">
+            <div class="tile-text">
+                <p class="tile-title">TEMPIO RADIO</p>
+                <p class="tile-subtitle">Set 17.01.2026</p>
+            </div>
+            <img src="img/icons/youtube.svg" class="tile-platform" alt="YouTube">
+        </a>
+
+        <a href="https://soundcloud.com/paolo-albasini/2025-luglio-22" class="tile" target="_blank">
+            <img src="https://i1.sndcdn.com/artworks-P29SFdJ9VJ6MGx9T-P3Y1Iw-t200x200.jpg" class="tile-thumb" alt="Home Mix Luglio 2025" width="72" height="72" loading="lazy" decoding="async">
+            <div class="tile-text">
+                <p class="tile-title">Home Mix</p>
+                <p class="tile-subtitle">Luglio 2025</p>
+            </div>
+            <img src="img/icons/soundcloud.svg" class="tile-platform" alt="SoundCloud">
+        </a>
+
+        <a href="https://soundcloud.com/paolo-albasini/2025-aprile-25" class="tile" target="_blank">
+            <img src="https://i1.sndcdn.com/artworks-lozdNu9AjEc0TqOu-GPcZHQ-t200x200.jpg" class="tile-thumb" alt="Home Mix Aprile 2025" width="72" height="72" loading="lazy" decoding="async">
+            <div class="tile-text">
+                <p class="tile-title">Home Mix</p>
+                <p class="tile-subtitle">Aprile 2025</p>
+            </div>
+            <img src="img/icons/soundcloud.svg" class="tile-platform" alt="SoundCloud">
+        </a>
+    </div>
+
+    <div class="collective">
+        <span class="collective-label">collective</span>
+        <h2>kntk</h2>
+        <div class="icons icons-small">
             <a href="https://instagram.com/k_kntk" aria-label="Instagram">
                 <img src="img/icons/instagram.svg" class="icon" alt="">
             </a>
