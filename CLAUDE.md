@@ -53,3 +53,11 @@ img/
 - Twitter Cards
 - Schema.org JSON-LD (Person)
 - Canonical URL: https://polpo.tech/
+
+## Stile comunicazione polpo
+
+Essenziale, selettivo, non conciliatorio. Non vende, non chiede attenzione, non negozia.
+- NO: "ascolta", "seguimi", "check out", verbi imperativi
+- NO: descrizioni lunghe, spiegazioni, giustificazioni
+- SI: etichette secche, funzionali, impersonali
+- Esempio corretto: "sets / links" (non "Listen to my sets and follow me")
