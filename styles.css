@@ -101,7 +101,7 @@ a, img {
     gap: 12px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 16px;
+    padding: 12px;
     text-decoration: none;
     color: #fff;
     transition: background 0.2s ease, transform 0.15s ease;
@@ -130,8 +130,8 @@ a, img {
 
 .tile-platform {
     position: absolute;
-    bottom: 16px;
-    right: 16px;
+    bottom: 12px;
+    right: 12px;
     width: 18px;
     height: 18px;
     opacity: 0.4;
