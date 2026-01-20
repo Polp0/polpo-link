@@ -9,7 +9,7 @@ Landing page personale stile Linktree per polpo.
 - HTML/CSS statico (no framework)
 - Hosting: Cloudflare Pages
 - Repo GitHub: github.com/Polp0/polpo-link
-- **Deploy: AUTOMATICO su push a branch main** (Cloudflare Pages collegato a GitHub)
+- **Deploy: manuale con wrangler** (vedi sezione Deploy)
 
 ## Dev locale
 
@@ -21,15 +21,12 @@ Apri http://localhost:3000
 
 ## Deploy
 
-**BASTA PUSHARE SU GITHUB:**
 ```bash
-git add . && git commit -m "message" && git push
+export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"
+npx wrangler pages deploy . --project-name=polpo-link --branch=production --commit-dirty=true
 ```
 
-Cloudflare Pages è collegato al repo GitHub (branch main).
-Ogni push triggera automaticamente il deploy su https://polpo.tech/
-
-NON serve wrangler, NON serve login Cloudflare, NON serve nient'altro.
+Richiede Node v20+. Il comando deploya direttamente su https://polpo.tech/
 
 ## Struttura
 
