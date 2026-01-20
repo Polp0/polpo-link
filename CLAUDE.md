@@ -23,10 +23,10 @@ Apri http://localhost:3000
 
 ```bash
 export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"
-npx wrangler pages deploy . --project-name=polpo-link --branch=production --commit-dirty=true
+npx wrangler pages deploy . --project-name=polpo-link --branch=main --commit-dirty=true
 ```
 
-Richiede Node v20+. Il comando deploya direttamente su https://polpo.tech/
+Richiede Node v20+. Usa `--branch=main` (non production). Deploya su https://polpo.tech/
 
 ## Struttura
 
