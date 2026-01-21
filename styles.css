@@ -46,6 +46,70 @@ body {
     overflow: hidden;
 }
 
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.no-top-fade .card::before {
+    display: none;
+}
+
+/* Hide Instagram icons in Instagram browser */
+.in-instagram a[href*="instagram.com"]:not(.item) {
+    display: none;
+}
+
+/* Instagram browser modal */
+.ig-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: calc(20px + env(safe-area-inset-top, 0px));
+}
+
+.ig-modal.show {
+    display: flex;
+}
+
+.ig-modal-arrow {
+    font-size: 32px;
+    margin-left: 8px;
+    margin-bottom: 12px;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.ig-modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+    max-width: 260px;
+}
+
+.ig-modal-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
 .card-content {
     flex: 1;
     overflow-y: auto;
@@ -216,6 +280,10 @@ a, img {
 /* ------------ DESKTOP ------------ */
 
 @media (min-width: 768px) {
+    .card::before {
+        display: none;
+    }
+
     html {
         background: #0a0a0a;
     }
