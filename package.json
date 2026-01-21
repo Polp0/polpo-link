@@ -1,0 +1,9 @@
+{
+  "name": "polpo-link",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=polpo-link",
+    "dev": "wrangler pages dev ."
+  }
+}

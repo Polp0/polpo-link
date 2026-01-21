@@ -1,0 +1,11 @@
+name = "polpo-link"
+compatibility_date = "2024-12-23"
+
+# Cloudflare Pages static site
+[site]
+bucket = "."
+
+# Custom domain (configure in Cloudflare dashboard)
+# routes = [
+#   { pattern = "polpo.tech/*", zone_name = "polpo.tech" }
+# ]
