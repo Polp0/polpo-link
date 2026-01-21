@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -68,7 +68,7 @@
     <div class="section">
         <span class="section-label">upcoming</span>
         <div class="items">
-            <a href="https://www.instagram.com/p/DTdXZf-CKw7/" class="item" target="_blank" rel="noopener noreferrer">
+            <div class="item">
                 <span class="item-date">
                     <span class="item-day">23</span>
                     <span class="item-month">JAN</span>
@@ -77,8 +77,8 @@
                     <span class="item-name">LYRA invites KNTK</span>
                     <span class="item-sub">Molo 11, Acqui Terme</span>
                 </span>
-            </a>
-            <a href="instagram://media?id=3814978906223292439" data-fallback="https://www.instagram.com/p/DTxhxpDDDAX/" class="item" target="_blank" rel="noopener noreferrer">
+            </div>
+            <div class="item">
                 <span class="item-date">
                     <span class="item-day">31</span>
                     <span class="item-month">JAN</span>
@@ -87,7 +87,7 @@
                     <span class="item-name">KNTK @ CGM</span>
                     <span class="item-sub">Club Giovanile, Milano</span>
                 </span>
-            </a>
+            </div>
         </div>
     </div>
 
@@ -136,19 +136,5 @@
     </div>
 </div>
 
-<script>
-(function() {
-    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
-
-    // Deep links with fallback
-    document.querySelectorAll('a[data-fallback]').forEach(link => {
-        if (!isInstagramBrowser) {
-            // Not in IG browser: use fallback URL
-            link.href = link.dataset.fallback;
-        }
-        // In IG browser: keep instagram:// deep link
-    });
-})();
-</script>
 </body>
 </html>
