@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=16">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -151,6 +151,13 @@
     const modal = document.getElementById('modal');
     const modalDice = document.getElementById('modal-dice');
     const modalIg = document.getElementById('modal-ig');
+
+    // Hide all Instagram links when in IG browser
+    if (isIGBrowser) {
+        document.querySelectorAll('a[href*="instagram.com"]').forEach(el => {
+            el.style.display = 'none';
+        });
+    }
 
     document.querySelectorAll('.item-event').forEach(el => {
         el.style.cursor = 'pointer';
