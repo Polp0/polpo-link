@@ -10,9 +10,7 @@ html {
     height: 100%;
     background:
         linear-gradient(to bottom,
-            rgb(20,20,20) 0%,
-            rgba(20,20,20,0.7) 3%,
-            rgba(20,20,20,0.3) 8%,
+            rgba(20,20,20,0.3) 0%,
             rgba(20,20,20,0.85) 35%,
             rgba(20,20,20,0.98) 50%,
             rgb(20,20,20) 60%
@@ -213,30 +211,6 @@ a, img {
     margin: 4px 0 10px 0;
     font-size: 16px;
     font-weight: 600;
-}
-
-/* ------------ TOAST (Instagram browser) ------------ */
-
-#toast {
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: rgba(255,255,255,0.95);
-    color: #000;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-#toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
 }
 
 /* ------------ DESKTOP ------------ */
