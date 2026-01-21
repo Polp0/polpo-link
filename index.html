@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -77,8 +77,13 @@
                     <span class="item-name">LYRA invites KNTK</span>
                     <span class="item-sub">Molo 11, Acqui Terme</span>
                 </span>
+                <span class="item-links">
+                    <a href="https://www.instagram.com/p/DTdXZf-CKw7/" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="img/icons/instagram.svg" alt="">
+                    </a>
+                </span>
             </div>
-            <a href="https://link.dice.fm/G4ae5431a956" class="item" target="_blank" rel="noopener noreferrer">
+            <div class="item">
                 <span class="item-date">
                     <span class="item-day">31</span>
                     <span class="item-month">JAN</span>
@@ -87,7 +92,15 @@
                     <span class="item-name">KNTK @ CGM</span>
                     <span class="item-sub">Club Giovanile, Milano</span>
                 </span>
-            </a>
+                <span class="item-links">
+                    <a href="https://link.dice.fm/G4ae5431a956" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="DICE">
+                        <img src="img/icons/dice.svg" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/p/DTxhxpDDDAX/" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="img/icons/instagram.svg" alt="">
+                    </a>
+                </span>
+            </div>
         </div>
     </div>
 
@@ -136,5 +149,15 @@
     </div>
 </div>
 
+<script>
+(function() {
+    const isIGBrowser = /Instagram/.test(navigator.userAgent);
+    if (isIGBrowser) {
+        document.querySelectorAll('.item-link[href*="instagram.com"]').forEach(el => {
+            el.style.display = 'none';
+        });
+    }
+})();
+</script>
 </body>
 </html>
