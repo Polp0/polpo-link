@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -136,5 +136,39 @@
     </div>
 </div>
 
+<script>
+(function() {
+    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
+    if (!isInstagramBrowser) return;
+
+    document.body.classList.add('ig-browser');
+
+    // Instagram links: tap to copy
+    document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.href;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Link copiato, incolla in Safari');
+            }).catch(() => {
+                // Fallback: open anyway
+                window.open(url, '_blank');
+            });
+        });
+    });
+
+    function showToast(msg) {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'toast';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+})();
+</script>
 </body>
 </html>

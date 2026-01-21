@@ -215,6 +215,30 @@ a, img {
     font-weight: 600;
 }
 
+/* ------------ TOAST (Instagram browser) ------------ */
+
+#toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(255,255,255,0.95);
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* ------------ DESKTOP ------------ */
 
 @media (min-width: 768px) {
