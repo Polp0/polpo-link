@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -147,18 +147,9 @@
 </div>
 <script>
 (function() {
-    const isIGBrowser = /Instagram/.test(navigator.userAgent);
     const modal = document.getElementById('modal');
     const modalDice = document.getElementById('modal-dice');
     const modalIg = document.getElementById('modal-ig');
-
-    // Disable Instagram links when in IG browser (visible but no action)
-    if (isIGBrowser) {
-        document.querySelectorAll('a[href*="instagram.com"]').forEach(el => {
-            el.addEventListener('click', e => e.preventDefault());
-            el.style.opacity = '0.3';
-        });
-    }
 
     document.querySelectorAll('.item-event').forEach(el => {
         el.style.cursor = 'pointer';
@@ -166,21 +157,15 @@
         const ig = el.dataset.ig;
 
         el.addEventListener('click', () => {
-            if (isIGBrowser) {
-                // In IG browser: open DICE if available, else nothing
-                if (dice) window.open(dice, '_blank');
-            } else {
-                // Other browser
-                if (dice && ig) {
-                    // Show modal
-                    modalDice.href = dice;
-                    modalIg.href = ig;
-                    modal.classList.add('show');
-                } else if (dice) {
-                    window.open(dice, '_blank');
-                } else if (ig) {
-                    window.open(ig, '_blank');
-                }
+            if (dice && ig) {
+                // Multiple links: show modal
+                modalDice.href = dice;
+                modalIg.href = ig;
+                modal.classList.add('show');
+            } else if (dice) {
+                window.open(dice, '_blank');
+            } else if (ig) {
+                window.open(ig, '_blank');
             }
         });
     });
