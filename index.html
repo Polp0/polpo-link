@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=18">
+    <link rel="stylesheet" href="styles.css?v=19">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -71,7 +71,7 @@
     <div class="section">
         <span class="section-label">upcoming</span>
         <div class="items">
-            <div class="item item-event" data-ig="https://www.instagram.com/p/DTdXZf-CKw7/">
+            <div class="item">
                 <span class="item-date">
                     <span class="item-day">23</span>
                     <span class="item-month">JAN</span>
@@ -81,7 +81,7 @@
                     <span class="item-sub">Molo 11, Acqui Terme</span>
                 </span>
             </div>
-            <div class="item item-event" data-dice="https://link.dice.fm/G4ae5431a956" data-ig="https://www.instagram.com/p/DTxhxpDDDAX/">
+            <a href="https://link.dice.fm/G4ae5431a956" class="item" target="_blank" rel="noopener noreferrer">
                 <span class="item-date">
                     <span class="item-day">31</span>
                     <span class="item-month">JAN</span>
@@ -90,7 +90,7 @@
                     <span class="item-name">KNTK @ CGM</span>
                     <span class="item-sub">Club Giovanile, Milano</span>
                 </span>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -139,41 +139,5 @@
     </div>
 </div>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <a id="modal-dice" href="#" target="_blank">DICE</a>
-        <a id="modal-ig" href="#" target="_blank">Instagram</a>
-    </div>
-</div>
-<script>
-(function() {
-    const modal = document.getElementById('modal');
-    const modalDice = document.getElementById('modal-dice');
-    const modalIg = document.getElementById('modal-ig');
-
-    document.querySelectorAll('.item-event').forEach(el => {
-        el.style.cursor = 'pointer';
-        const dice = el.dataset.dice;
-        const ig = el.dataset.ig;
-
-        el.addEventListener('click', () => {
-            if (dice && ig) {
-                // Multiple links: show modal
-                modalDice.href = dice;
-                modalIg.href = ig;
-                modal.classList.add('show');
-            } else if (dice) {
-                window.open(dice, '_blank');
-            } else if (ig) {
-                window.open(ig, '_blank');
-            }
-        });
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('show');
-    });
-})();
-</script>
 </body>
 </html>
