@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=13">
+    <link rel="stylesheet" href="styles.css?v=14">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -68,7 +68,7 @@
     <div class="section">
         <span class="section-label">upcoming</span>
         <div class="items">
-            <div class="item">
+            <div class="item item-event" data-ig="https://www.instagram.com/p/DTdXZf-CKw7/">
                 <span class="item-date">
                     <span class="item-day">23</span>
                     <span class="item-month">JAN</span>
@@ -77,13 +77,8 @@
                     <span class="item-name">LYRA invites KNTK</span>
                     <span class="item-sub">Molo 11, Acqui Terme</span>
                 </span>
-                <span class="item-links">
-                    <a href="https://www.instagram.com/p/DTdXZf-CKw7/" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="img/icons/instagram.svg" alt="">
-                    </a>
-                </span>
             </div>
-            <div class="item">
+            <div class="item item-event" data-dice="https://link.dice.fm/G4ae5431a956" data-ig="https://www.instagram.com/p/DTxhxpDDDAX/">
                 <span class="item-date">
                     <span class="item-day">31</span>
                     <span class="item-month">JAN</span>
@@ -91,14 +86,6 @@
                 <span class="item-info">
                     <span class="item-name">KNTK @ CGM</span>
                     <span class="item-sub">Club Giovanile, Milano</span>
-                </span>
-                <span class="item-links">
-                    <a href="https://link.dice.fm/G4ae5431a956" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="DICE">
-                        <img src="img/icons/dice.svg" alt="">
-                    </a>
-                    <a href="https://www.instagram.com/p/DTxhxpDDDAX/" class="item-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="img/icons/instagram.svg" alt="">
-                    </a>
                 </span>
             </div>
         </div>
@@ -149,14 +136,47 @@
     </div>
 </div>
 
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <a id="modal-dice" href="#" target="_blank">DICE</a>
+        <a id="modal-ig" href="#" target="_blank">Instagram</a>
+    </div>
+</div>
 <script>
 (function() {
     const isIGBrowser = /Instagram/.test(navigator.userAgent);
-    if (isIGBrowser) {
-        document.querySelectorAll('.item-link[href*="instagram.com"]').forEach(el => {
-            el.style.display = 'none';
+    const modal = document.getElementById('modal');
+    const modalDice = document.getElementById('modal-dice');
+    const modalIg = document.getElementById('modal-ig');
+
+    document.querySelectorAll('.item-event').forEach(el => {
+        el.style.cursor = 'pointer';
+        const dice = el.dataset.dice;
+        const ig = el.dataset.ig;
+
+        el.addEventListener('click', () => {
+            if (isIGBrowser) {
+                // In IG browser: open DICE if available, else nothing
+                if (dice) window.open(dice, '_blank');
+            } else {
+                // Other browser
+                if (dice && ig) {
+                    // Show modal
+                    modalDice.href = dice;
+                    modalIg.href = ig;
+                    modal.classList.add('show');
+                } else if (dice) {
+                    window.open(dice, '_blank');
+                } else if (ig) {
+                    window.open(ig, '_blank');
+                }
+            }
         });
-    }
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('show');
+    });
 })();
 </script>
 </body>
