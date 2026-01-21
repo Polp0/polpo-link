@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="sets / links">
     <meta name="twitter:image" content="https://polpo.tech/img/hero-img.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -68,7 +68,7 @@
     <div class="section">
         <span class="section-label">upcoming</span>
         <div class="items">
-            <a href="https://instagr.am/p/DTdXZf-CKw7/" class="item" target="_blank" rel="noopener noreferrer">
+            <div class="item" data-share="https://www.instagram.com/p/DTdXZf-CKw7/">
                 <span class="item-date">
                     <span class="item-day">23</span>
                     <span class="item-month">JAN</span>
@@ -77,8 +77,8 @@
                     <span class="item-name">LYRA invites KNTK</span>
                     <span class="item-sub">Molo 11, Acqui Terme</span>
                 </span>
-            </a>
-            <a href="https://instagr.am/p/DTxhxpDDDAX/" class="item" target="_blank" rel="noopener noreferrer">
+            </div>
+            <div class="item" data-share="https://www.instagram.com/p/DTxhxpDDDAX/">
                 <span class="item-date">
                     <span class="item-day">31</span>
                     <span class="item-month">JAN</span>
@@ -87,7 +87,7 @@
                     <span class="item-name">KNTK @ CGM</span>
                     <span class="item-sub">Club Giovanile, Milano</span>
                 </span>
-            </a>
+            </div>
         </div>
     </div>
 
@@ -136,5 +136,14 @@
     </div>
 </div>
 
+<script>
+document.querySelectorAll('[data-share]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => {
+        const url = el.dataset.share;
+        window.open(url, '_top');
+    });
+});
+</script>
 </body>
 </html>
