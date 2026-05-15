@@ -46,21 +46,6 @@ body {
     overflow: hidden;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 10;
-}
-
-.no-top-fade .card::before {
-    display: none;
-}
 
 /* Hide Instagram icons in Instagram browser */
 .in-instagram a[href*="instagram.com"]:not(.item) {

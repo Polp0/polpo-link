@@ -1,23 +1,8 @@
 # polpo-link
 
-Landing page personale stile Linktree per polpo.
+Sito statico HTML/CSS, dominio polpo.tech, hosted Cloudflare Pages.
 
-**Dominio**: https://polpo.tech/
-
-## Stack
-
-- HTML/CSS statico (no framework)
-- Hosting: Cloudflare Pages
-- Repo GitHub: github.com/Polp0/polpo-link
-- **Deploy: manuale con wrangler** (vedi sezione Deploy)
-
-## Dev locale
-
-```bash
-npx serve
-```
-
-Apri http://localhost:3000
+> Default: branch "Muoviti libero" del global CLAUDE.md. Nessun DB/auth/migration qui.
 
 ## Deploy
 
@@ -26,38 +11,16 @@ export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"
 npx wrangler pages deploy . --project-name=polpo-link --branch=main --commit-dirty=true
 ```
 
-Richiede Node v20+. Usa `--branch=main` (non production). Deploya su https://polpo.tech/
+Branch `main`, NON `production`. Richiede Node v20+.
 
-## Struttura
+## Workflow CSS
 
-```
-index.html      - pagina principale
-styles.css      - stili
-img/
-  hero-img.jpg  - foto profilo (avatar)
-  icons/        - icone SVG (instagram, soundcloud, telegram, youtube)
-```
+Dopo ogni modifica `styles.css`, bumpa `?v=N` nel link tag in `index.html`.
 
-## Sezioni pagina
+## Regola design
 
-1. **Profilo** - avatar piccolo (96px) + nome + icone social (Instagram, SoundCloud)
-2. **Tiles** - contenuti specifici con thumbnail (TEMPIO RADIO, Home Mixes)
-3. **Collective kntk** - icone piccole (Instagram, SoundCloud, Telegram)
+Tiles (con thumbnail) = contenuti specifici (set, evento singolo). Link generali (Instagram, SoundCloud, Telegram) = icone, NON tiles.
 
-**Nota**: I link generali (Instagram, SoundCloud) sono icone, NON tiles. Le tiles sono solo per contenuti specifici.
+## Tono polpo (per copy sul sito)
 
-## SEO
-
-- Meta tags (description, keywords, author)
-- Open Graph (Facebook, WhatsApp)
-- Twitter Cards
-- Schema.org JSON-LD (Person)
-- Canonical URL: https://polpo.tech/
-
-## Stile comunicazione polpo
-
-Essenziale, selettivo, non conciliatorio. Non vende, non chiede attenzione, non negozia.
-- NO: "ascolta", "seguimi", "check out", verbi imperativi
-- NO: descrizioni lunghe, spiegazioni, giustificazioni
-- SI: etichette secche, funzionali, impersonali
-- Esempio corretto: "sets / links" (non "Listen to my sets and follow me")
+Essenziale, impersonale, non vende. NO imperativi ("ascolta", "seguimi", "check out"), NO descrizioni. Etichette secche: "sets / links" non "Listen to my sets".
